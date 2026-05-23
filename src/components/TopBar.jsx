@@ -14,7 +14,6 @@ export function TopBar({
   onIndentChange,
   mode,
   onModeChange,
-  onFormat,
   onMinify,
   onCopy,
   onClear,
@@ -24,10 +23,19 @@ export function TopBar({
   onToggleSidebar,
 }) {
   const [showMenu, setShowMenu] = useState(false);
+  const [localCopied, setLocalCopied] = useState(false);
+
+  const handleCopy = () => {
+    onCopy();
+    setLocalCopied(true);
+    setTimeout(() => setLocalCopied(false), 2000);
+  };
+
+  const isCopied = copied || localCopied;
 
   return (
     <header className="topbar">
-      {/* LEFT SECTION */}
+      {/* LEFT - Menu + Title */}
       <div className="topbar-left">
         <button
           className="menu-btn"
@@ -44,7 +52,7 @@ export function TopBar({
         </div>
       </div>
 
-      {/* CENTER SECTION */}
+      {/* CENTER - Settings (Indent + Mode) */}
       <div className="topbar-center">
         {activeTool === "json" && (
           <div className="setting-group">
@@ -89,7 +97,7 @@ export function TopBar({
         )}
       </div>
 
-      {/* RIGHT SECTION */}
+      {/* RIGHT - Action Buttons */}
       <div className="topbar-right">
         <button
           className="action-btn secondary"
@@ -121,17 +129,18 @@ export function TopBar({
           </button>
         )}
 
-        {/* COPY BUTTON WITH VISUAL FEEDBACK */}
+        {/* COPY BUTTON */}
         <button
-          className={`action-btn primary ${copied ? "success" : ""}`}
-          onClick={onCopy}
+          className={`action-btn primary ${isCopied ? "success" : ""}`}
+          onClick={handleCopy}
           disabled={!output}
-          title={copied ? "Copied to clipboard!" : "Copy to clipboard"}
+          title={isCopied ? "Copied to clipboard!" : "Copy to clipboard"}
         >
-          <span className="btn-icon">{copied ? "✓" : "📋"}</span>
-          <span className="btn-text">{copied ? "Copied!" : "Copy"}</span>
+          <span className="btn-icon">{isCopied ? "✓" : "📋"}</span>
+          <span className="btn-text">{isCopied ? "Copied!" : "Copy"}</span>
         </button>
 
+        {/* MORE MENU */}
         <div className="menu-wrapper">
           <button
             className="action-btn secondary menu-toggle"
@@ -143,7 +152,7 @@ export function TopBar({
 
           {showMenu && (
             <div className="dropdown-menu">
-              <a href="#download" className="menu-item" onClick={onLoadSample}>
+              <a href="#download" className="menu-item">
                 📥 Download
               </a>
               <a href="#settings" className="menu-item">

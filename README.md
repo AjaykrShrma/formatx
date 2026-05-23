@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # FormatX — Developer Formatter Toolkit
 
 A **free, fast, open-source** web app to format and validate JSON, XML, HTML, CSS, SQL, Base64, URL, and JWT tokens — all in one place.
@@ -69,7 +68,3 @@ npm run preview
 - **Fonts:** IBM Plex Sans & Mono
 
 ## 📁 Project Structure
-=======
-# formatx
-All-in-one developer formatter toolkit - Format JSON, XML, HTML, CSS, SQL, Base64, URL &amp; JWT.
->>>>>>> f7cc8f8f09d7aaa42b2727b64b7b0bd16f061e26
