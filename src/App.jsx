@@ -105,9 +105,12 @@ function JSONFormatter() {
   return (
     <>
       <Helmet>
-        <title>{tool.label} — FormatX</title>
-        <meta name="description" content={tool.description} />
-        <meta name="keywords" content={tool.keywords} />
+        <title>JSON Formatter & Validator — FormatX | Format JSON Online Free</title>
+        <meta name="description" content="Free online JSON formatter and validator. Format, beautify, and validate JSON with custom indentation. No installation required. Perfect for developers." />
+        <meta name="keywords" content="json formatter, json validator, json beautifier, format json, pretty print json" />
+        <meta property="og:title" content="JSON Formatter — FormatX" />
+        <meta property="og:description" content="Format and validate JSON instantly with custom indentation options." />
+        <link rel="canonical" href="https://formatx.vercel.app/json-formatter" />
       </Helmet>
       <ToolPage
         tool={tool}
@@ -146,9 +149,12 @@ function XMLFormatter() {
   return (
     <>
       <Helmet>
-        <title>{tool.label} — FormatX</title>
-        <meta name="description" content={tool.description} />
-        <meta name="keywords" content={tool.keywords} />
+        <title>XML Formatter & Validator — FormatX | Format XML Online Free</title>
+        <meta name="description" content="Free online XML formatter and validator. Format and beautify XML documents with proper indentation and validation. No installation needed." />
+        <meta name="keywords" content="xml formatter, xml validator, xml beautifier, format xml, pretty print xml" />
+        <meta property="og:title" content="XML Formatter — FormatX" />
+        <meta property="og:description" content="Format and validate XML documents instantly with proper tag matching." />
+        <link rel="canonical" href="https://formatx.vercel.app/xml-formatter" />
       </Helmet>
       <ToolPage
         tool={tool}
