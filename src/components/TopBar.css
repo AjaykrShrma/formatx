@@ -1,0 +1,330 @@
+/* src/components/TopBar.css */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #0d1117 0%, #090c14 100%);
+  border-bottom: 1px solid #1e293b;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* LEFT SECTION */
+/* ──────────────────────────────────────────────────────────────── */
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid #2d3748;
+  color: #94a3b8;
+  padding: 6px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.15s ease;
+}
+
+.menu-btn:hover {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+}
+
+.topbar-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.tool-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+}
+
+.tool-subtitle {
+  font-size: 11px;
+  color: #4a5568;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* CENTER SECTION - Settings */
+/* ──────────────────────────────────────────────────────────────── */
+
+.topbar-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.setting-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.setting-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4a5568;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* INDENT BUTTONS */
+.indent-buttons {
+  display: flex;
+  gap: 4px;
+  background: rgba(30, 41, 59, 0.5);
+  padding: 3px;
+  border-radius: 6px;
+  border: 1px solid #2d3748;
+}
+
+.indent-btn {
+  padding: 4px 10px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.indent-btn:hover {
+  color: #e2e8f0;
+}
+
+.indent-btn.active {
+  background: #1d3461;
+  color: #60a5fa;
+}
+
+/* MODE TOGGLE */
+.mode-toggle {
+  display: flex;
+  gap: 2px;
+  background: rgba(30, 41, 59, 0.5);
+  padding: 3px;
+  border-radius: 6px;
+  border: 1px solid #2d3748;
+}
+
+.mode-btn {
+  padding: 4px 12px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.mode-btn:hover {
+  color: #e2e8f0;
+}
+
+.mode-btn.active {
+  background: #1d3461;
+  color: #60a5fa;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* RIGHT SECTION - Action Buttons */
+/* ──────────────────────────────────────────────────────────────── */
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 auto;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #2d3748;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: "IBM Plex Sans", sans-serif;
+  white-space: nowrap;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #4a5568;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* PRIMARY BUTTON - Copy */
+.action-btn.primary {
+  background: linear-gradient(135deg, #1d3461 0%, #0d1b2a 100%);
+  color: #60a5fa;
+  border-color: #2d5299;
+}
+
+.action-btn.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2d4a7a 0%, #1a2638 100%);
+  border-color: #3d63b8;
+}
+
+.action-btn.primary.success {
+  background: linear-gradient(135deg, #14532d 0%, #0a2e17 100%);
+  color: #4ade80;
+  border-color: #166534;
+}
+
+.btn-icon {
+  font-size: 13px;
+}
+
+.btn-text {
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+/* DROPDOWN MENU */
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-toggle {
+  padding: 6px 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: #1e293b;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 140px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: "IBM Plex Sans", sans-serif;
+  width: 100%;
+  text-align: left;
+}
+
+.menu-item:hover {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* MOBILE RESPONSIVE */
+/* ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .topbar-center {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+
+  .topbar-title {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .action-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .tool-title {
+    font-size: 13px;
+  }
+
+  .tool-subtitle {
+    display: none;
+  }
+
+  .topbar-center {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .setting-label {
+    font-size: 10px;
+  }
+
+  .indent-btn,
+  .mode-btn {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+}

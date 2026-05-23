@@ -1,0 +1,170 @@
+/* src/components/StatusBar.css */
+
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #090c14 0%, #0d1117 100%);
+  border-top: 1px solid #1e293b;
+  flex-shrink: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 11px;
+  color: #64748b;
+  flex-wrap: wrap;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* LEFT - Status */
+/* ──────────────────────────────────────────────────────────────── */
+
+.status-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-dot.default {
+  background: #4a5568;
+  animation: none;
+}
+
+.status-dot.success {
+  background: #4ade80;
+}
+
+.status-dot.error {
+  background: #f87171;
+  animation: none;
+}
+
+.status-dot.info {
+  background: #60a5fa;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.status-text {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* CENTER - Stats */
+/* ──────────────────────────────────────────────────────────────── */
+
+.status-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.stat-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.stat-label {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #94a3b8;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+}
+
+.stat-separator {
+  color: #2d3748;
+  font-weight: 300;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* RIGHT - App Info */
+/* ──────────────────────────────────────────────────────────────── */
+
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  color: #2d3748;
+  font-weight: 500;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.app-name {
+  color: #60a5fa;
+}
+
+.app-version {
+  color: #2d3748;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* MOBILE RESPONSIVE */
+/* ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .statusbar {
+    padding: 6px 12px;
+    font-size: 10px;
+    gap: 12px;
+  }
+
+  .status-center {
+    gap: 6px;
+  }
+
+  .stat-group {
+    gap: 3px;
+  }
+
+  .status-right {
+    display: none;
+  }
+
+  .status-dot {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statusbar {
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+
+  .stat-separator {
+    display: none;
+  }
+
+  .status-center {
+    gap: 8px;
+  }
+}
